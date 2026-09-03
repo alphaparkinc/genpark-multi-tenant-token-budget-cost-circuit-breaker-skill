@@ -1,0 +1,42 @@
+{
+  "name": "genpark-multi-tenant-token-budget-cost-circuit-breaker-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - Multi-tenant LLM token budget allocation, rate limit quota tracker, and cost anomaly circuit breaker.",
+  "homepage": "https://genpark.ai/mcp",
+  "author": "genpark",
+  "category": "finops-gateway",
+  "tags": [
+    "finops",
+    "helicone-style",
+    "portkey",
+    "token-budget",
+    "circuit-breaker"
+  ],
+  "inputs": {
+    "tenant_id": {
+      "type": "string"
+    },
+    "requested_prompt_tokens": {
+      "type": "integer"
+    },
+    "monthly_spend_limit_usd": {
+      "type": "number"
+    }
+  },
+  "outputs": {
+    "finops_circuit_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "allow_request_execution": {
+      "type": "boolean"
+    },
+    "finops_telemetry_dossier_url": {
+      "type": "string"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
